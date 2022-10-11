@@ -1,0 +1,30 @@
+{
+  "name": "cypress_ixc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rm -R -f cypress/report && mkdir cypress/report && mkdir cypress/report/mochawesome-report",
+    "cypress:open": "cypress open --browser electron",
+    "cy:run": "cypress run --reporter mochawesome --browser electron",
+    "merge-json": "mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/output.json",
+    "generate_mochawesome_report": "marge cypress/report/output.json --reportDir cypress/report/ --inline",
+    "pretest": "npm run clean:reports",
+    "posttest": "npm run merge-json && npm run generate_mochawesome_report",
+    "test": "npm run pretest && npm run cy:run && npm run posttest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/step_definitions"
+  }
+}
