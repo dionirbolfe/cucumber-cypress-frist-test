@@ -1,0 +1,11 @@
+version: "3"
+services:
+  # this container will run Cypress test using built-in Electron browser
+  e2e-electron:
+    image: "cyp-cucumber-dock-mocha-report"
+    command: "test"
+    ipc: host
+
+#
+#      - ./cypress/videos:/cypress-docker/cypress/videos
+#      - ./cypress/report:/cypress-docker/cypress/report
