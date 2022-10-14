@@ -17,8 +17,7 @@ module.exports = defineConfig({
     env: {
         "TAGS": "not @ignore",
         "base": "https://controlevm.ixcsoft.com.br/vm/web/login/login.php",
-        "usuario": "prog32@ixcsoft.com.br",
-        "senha": "uyMp22m#pC",
+
     },
     e2e: {
         setupNodeEvents(on, config) { //load plugins cucumber

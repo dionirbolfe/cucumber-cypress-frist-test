@@ -37,14 +37,12 @@ COPY ./cypress.config.js .
 COPY ./cypress ./cypress
 
 RUN chmod -R 777 /cypress-docker
-RUN ls
 RUN npm install
-
 
 RUN chmod -R 777 /root/.cache/Cypress
 RUN chmod 777 /root
 #RUN chmod 775 /root/.cache
 RUN chmod 777 /root/.config
 RUN chmod -R 777 /root/.config/Cypress
-RUN ls
+
 ENTRYPOINT ["npm", "run"]

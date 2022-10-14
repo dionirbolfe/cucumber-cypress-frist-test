@@ -12,3 +12,16 @@
 ```bash
 $ npm install cypress cypress-cucumber-preprocessor mochawesome mochawesome-merge mochawesome-report-generator cypress-multi-reporters
 ```
+
+## Docker build and run
+
+```bash
+docker build -t cyp-cucumber-dock-mocha-report .
+```
+
+```bash
+docker-compose run e2e-electron
+```
+
+        
+
