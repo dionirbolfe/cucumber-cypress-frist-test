@@ -5,10 +5,12 @@ Given("que o usuário deseja cadastrar uma uma vm", () => {
     cy.Login(Cypress.env('base'))
 });
 And("acessa o menu Add > VM", function () {
-    cy.wait('@dash_principal')
-    cy.get('.nav-item > .nav-link > .mdi > b').contains('Add').click()
-    cy.get('.nav-item > .dropdown-menu > .dropdown-item').contains("VM").click()
-
+    cy.wait('@dash_principal').then(
+        ()=>{
+            cy.get('.nav-item > .nav-link > .mdi > b').contains('Add').click()
+            cy.get('.nav-item > .dropdown-menu > .dropdown-item').contains("VM").click()
+        }
+    )
 });
 And('informa a senha da VM {string}', function (string) {
     cy.get('input[name=senhavm]').type(string)
@@ -27,6 +29,7 @@ When("no form de criação clica no botão criar",()=>{
     cy.get("button.btn.btn-success").contains("Criar").click()
 })
 Then("a mensagem de criação deve aparecer",()=>{
-    cy.wait('@cria_VM')
-    cy.get('.ajs-content').contains("Sua VM foi criada:").should('be.visible')
+    cy.wait('@cria_VM').then(()=>{
+        cy.get('.ajs-content').contains("Sua VM foi criada:").should('be.visible')
+    })
 })
