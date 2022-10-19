@@ -3,7 +3,7 @@ Feature: Cadastro de VM
   Fulano deseja criar uma maquina virtual
   Para que seja possível utilizar nos testes futuros
 
-#@Login
+  @Login
   Scenario: Cadastro de VM
     Given que o usuário deseja cadastrar uma uma vm
     And acessa o menu Add > VM

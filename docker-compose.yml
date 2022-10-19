@@ -5,7 +5,3 @@ services:
     image: "cyp-cucumber-dock-mocha-report"
     command: "test"
     ipc: host
-
-#
-#      - ./cypress/videos:/cypress-docker/cypress/videos
-#      - ./cypress/report:/cypress-docker/cypress/report

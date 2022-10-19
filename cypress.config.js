@@ -1,13 +1,11 @@
 const {defineConfig} = require('cypress')
 
 module.exports = defineConfig({
-    experimentalStudio: true,
-    modifyObstructiveCode: false,
-    projectId: 'karma5',
-    watchForFileChanges: false,
+  projectId: 'krwam5',
+
     reporter: 'mochawesome',
     reporterOptions: {
-        charts: true,
+        charts: false,
         overwrite: false,
         html: true,
         json: true,
@@ -15,14 +13,14 @@ module.exports = defineConfig({
     },
 
     env: {
-        "TAGS": "not @ignore",
         "base": "https://controlevm.ixcsoft.com.br/vm/web/login/login.php",
-
+        "usuario": "NECESSARIO PREENCHER",
+        "senha": 'NECESSARIO PREENCHER',
     },
     e2e: {
         setupNodeEvents(on, config) { //load plugins cucumber
             return require('./cypress/plugins/index.js')(on, config)
         },
-        specPattern: 'cypress/integration/*.feature',
+        specPattern: 'cypress/e2e/*.feature',
     },
 })

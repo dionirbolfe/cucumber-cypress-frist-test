@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-$ npm install cypress cypress-cucumber-preprocessor mochawesome mochawesome-merge mochawesome-report-generator cypress-multi-reporters
+npm install cypress cypress-cucumber-preprocessor mochawesome mochawesome-merge mochawesome-report-generator cypress-multi-reporters
 ```
 
 ## Docker build and run
